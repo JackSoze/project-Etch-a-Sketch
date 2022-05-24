@@ -1,0 +1,22 @@
+.squareDiv {
+    height: 30px;
+    width: 30px;
+    border: dotted rgb(180, 180, 204) 2px;
+    margin: 0px;
+}
+
+#container {
+    display: grid;
+    grid-template-columns: repeat(16, 30px);
+    grid-gap: 0px;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.color {
+    background-color: black;
+}
