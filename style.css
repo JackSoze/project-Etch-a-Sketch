@@ -1,14 +1,19 @@
 .squareDiv {
-    height: 30px;
-    width: 30px;
-    border: dotted rgb(180, 180, 204) 2px;
-    margin: 0px;
-}
+    background-color: white;
+    border: 1px solid black;
+    }
 
 #container {
-    display: grid;
-    grid-template-columns: repeat(16, 30px);
-    grid-gap: 0px;
+    margin-top: 50px;
+    display: inline-grid;
+    grid-template-columns: repeat(16, 2fr);
+    grid-template-rows: repeat(15, 2fr);
+    border: 5px solid white;
+    border-radius: 5px;
+    height: 575px;
+    width: 575px;
+    background-color: gray;
+    box-shadow: 10px 10p
 }
 
 body {
