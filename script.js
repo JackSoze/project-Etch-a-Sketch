@@ -1,25 +1,45 @@
+let numberOfDivs =16;
+
+
 function createDivs() {
+
     const container = document.querySelector('#container');
-    let numberOfDivs = parseInt(prompt('how many divs per side?',16));
+
+    if (numberOfDivs>100) {
+        alert ('refresh and input a number less than 100')
+        return;
+    }
+    
     for (let i=0; i<(numberOfDivs*numberOfDivs); i++) {
         const squareDiv = document.createElement('div');
         squareDiv.classList.add('squareDiv');
         
         container.appendChild(squareDiv)
     }
-    const clear = document.createElement('div')
-    clear.classList.add('clear')
-    container.appendChild(clear)
-
-    container.setAttribute('style',`grid-template-columns: repeat(${numberOfDivs}, 2fr) ; grid-template-rows: repeat(${numberOfDivs}, 2fr)`);
     
-}
+    container.setAttribute('style',`grid-template-columns: repeat(${numberOfDivs}, 2fr) ;grid-template-rows: repeat(${numberOfDivs}, 2fr)`);
 
-createDivs()
-
-const squareDivs = document.querySelectorAll('.squareDiv')
-squareDivs.forEach(squareDiv =>
+    const squareDivs = document.querySelectorAll('.squareDiv')
+    squareDivs.forEach(squareDiv =>
     squareDiv.addEventListener('mouseenter', function(e){
         this.classList.add('color')
     }) 
     )
+
+}
+
+createDivs();
+
+const button = document.addEventListener('click',function(e){
+    console.log(e)
+    numberOfDivs = parseInt(prompt('number of divs',16));
+    const squareDivs = document.querySelectorAll('.squareDiv');
+    squareDivs.forEach(squareDiv=>squareDiv.remove());
+    createDivs()
+})
+
+
+
+
+
+
