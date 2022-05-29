@@ -6,7 +6,7 @@ function createDivs() {
     const container = document.querySelector('#container');
 
     if (numberOfDivs>100) {
-        alert ('refresh and input a number less than 100')
+        alert ('press button and input a number less than 100')
         return;
     }
     
@@ -19,24 +19,33 @@ function createDivs() {
     
     container.setAttribute('style',`grid-template-columns: repeat(${numberOfDivs}, 2fr) ;grid-template-rows: repeat(${numberOfDivs}, 2fr)`);
 
-    const squareDivs = document.querySelectorAll('.squareDiv')
-    squareDivs.forEach(squareDiv =>
-    squareDiv.addEventListener('mouseenter', function(e){
-        this.classList.add('color')
-    }) 
-    )
+    
 
 }
 
-createDivs();
+var randomColor = Math.floor(Math.random()*16777215).toString(16)
 
-const button = document.addEventListener('click',function(e){
-    console.log(e)
+createDivs();
+const button = document.querySelector('#prompt')
+    button.addEventListener('click',function(e){
     numberOfDivs = parseInt(prompt('number of divs',16));
     const squareDivs = document.querySelectorAll('.squareDiv');
     squareDivs.forEach(squareDiv=>squareDiv.remove());
     createDivs()
+    colorChange ()
 })
+
+function colorChange() {
+const squareDivs = document.querySelectorAll('.squareDiv')
+    squareDivs.forEach(squareDiv =>
+    squareDiv.addEventListener('mouseenter', function(e){
+        console.log(e)
+        //this.classList.add('color') //to add a class changing background to just black
+        let randomColor = Math.floor(Math.random()*16777215).toString(16)
+        squareDiv.setAttribute('style', `background-color : #${randomColor}`)
+    }) 
+    )}
+
 
 
 
