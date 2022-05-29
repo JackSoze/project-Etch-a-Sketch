@@ -10,13 +10,14 @@
     grid-template-rows: repeat(15, 2fr);
     border: 5px solid white;
     border-radius: 5px;
-    height: 575px;
-    width: 575px;
+    height: 475px;
+    width: 475px;
     background-color: gray;
     box-shadow: 10px 10p
 }
 
 body {
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -30,6 +31,22 @@ body {
 button {
     background: #24a0ed ;
     color: aliceblue;
-    padding: 10px 20px;
+    padding: 12px 22px;
     border-radius: 10px;
+    border: none;
 }
+
+.controls {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+}
+ #black:hover {
+     background-color: grey;
+     transition: .7;
+ }
+
+ #rgb:hover {
+    background-color: rgb(158, 93, 153);
+    transition: .7;
+ }

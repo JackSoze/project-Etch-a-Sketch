@@ -9,7 +9,7 @@ function etchASketch () {
 function createDivs() {
 
     const container = document.querySelector('#container');
-
+    
     if (numberOfDivs>100) {
         alert ('press button and input a number less than 100')
         return;
@@ -26,13 +26,13 @@ function createDivs() {
 }
 
 function colorButtons() {
-    const black = document.querySelector('#black');
-    black.addEventListener('click', function (e){
+    const blackButton = document.querySelector('#black');
+    blackButton.addEventListener('click', function (e){
         colorChange('black')
     })
 
-    const rgb = document.querySelector('#rgb');
-    rgb.addEventListener('click',function(e){
+    const rgbButton = document.querySelector('#rgb');
+    rgbButton.addEventListener('click',function(e){
         colorChange('rgb')
     })
 }
@@ -45,7 +45,7 @@ function colorChange(color) {
             let randomColor = Math.floor(Math.random()*16777215).toString(16)
             squareDiv.setAttribute('style', `background-color : #${randomColor}`)
            } else if (color=='black') {
-            squareDiv.setAttribute('style', 'background-color : black')
+            squareDiv.setAttribute('style', 'background-color : grey')
            }
             }))}
             
