@@ -1,5 +1,10 @@
 let numberOfDivs =16;
 
+function etchASketch () {
+    createDivs();
+    colorButtons()
+}
+
 
 function createDivs() {
 
@@ -18,29 +23,42 @@ function createDivs() {
     }
     
     container.setAttribute('style',`grid-template-columns: repeat(${numberOfDivs}, 2fr) ;grid-template-rows: repeat(${numberOfDivs}, 2fr)`);
-    
-    colorChange ();
 }
 
-function colorChange() {
+function colorButtons() {
+    const black = document.querySelector('#black');
+    black.addEventListener('click', function (e){
+        colorChange('black')
+    })
+
+    const rgb = document.querySelector('#rgb');
+    rgb.addEventListener('click',function(e){
+        colorChange('rgb')
+    })
+}
+
+function colorChange(color) {
     const squareDivs = document.querySelectorAll('.squareDiv')
         squareDivs.forEach(squareDiv =>
         squareDiv.addEventListener('mouseenter', function(e){
-            console.log(e)
-            //this.classList.add('color') //to add a class changing background to just black
+           if (color=='rgb') {
             let randomColor = Math.floor(Math.random()*16777215).toString(16)
             squareDiv.setAttribute('style', `background-color : #${randomColor}`)
-        }) 
-        )}
-
-createDivs();
+           } else if (color=='black') {
+            squareDiv.setAttribute('style', 'background-color : black')
+           }
+            }))}
+            
+etchASketch()
+colorChange('rgb');
 
 const button = document.querySelector('#prompt')
     button.addEventListener('click',function(e){
     numberOfDivs = parseInt(prompt('number of divs',16));
     const squareDivs = document.querySelectorAll('.squareDiv');
     squareDivs.forEach(squareDiv=>squareDiv.remove());
-    createDivs()
+    etchASketch()
+    colorChange('rgb')
 })
 
 
