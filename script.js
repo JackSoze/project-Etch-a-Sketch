@@ -49,8 +49,8 @@ function colorChange(color) {
            }
             }))}
             
-etchASketch()
-colorChange('rgb');
+etchASketch() //creates divs and activates buttons
+colorChange('rgb'); //sets the initial color theme to rgb
 
 const button = document.querySelector('#prompt')
     button.addEventListener('click',function(e){
