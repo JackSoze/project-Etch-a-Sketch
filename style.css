@@ -10,8 +10,8 @@
     grid-template-rows: repeat(15, 2fr);
     border: 5px solid white;
     border-radius: 5px;
-    height: 475px;
-    width: 475px;
+    height: 450px;
+    width: 450px;
     background-color: gray;
     box-shadow: 10px 10p
 }

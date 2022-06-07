@@ -1,3 +1,5 @@
+alert('play on the computer for now')
+
 let numberOfDivs =16;
 
 function etchASketch () {
